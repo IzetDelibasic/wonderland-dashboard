@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-200">Vue Dashboard</div>
+  <router-view/>
 </template>
 
 <script>

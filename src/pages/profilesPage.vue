@@ -1,6 +1,6 @@
 <template lang="">
     <div>
-        
+        Profiles
     </div>
 </template>
 <script>
