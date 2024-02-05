@@ -8,8 +8,36 @@
                 </div>
             </div>
             <div class="h-[calc(100vh-50px)] bg-gray-800">
-                <font-awesome-icon icon="users" />
-                Home
+                <div class="py-[20px] hover:bg-gray-500 transition-all duration-300 ease-in-out flex items-center justify-start mx-[2rem]">
+                    <font-awesome-icon icon="fa-solid fa-house-user" class="px-[10px]"/>
+                    <div>
+                        Home
+                    </div>
+                </div>
+                <div class="py-[20px] hover:bg-gray-500 transition-all duration-300 ease-in-out flex items-center justify-start mx-[2rem]">
+                    <font-awesome-icon icon="users" class="px-[10px]"/>
+                    <div>
+                        Profile
+                    </div>
+                </div>
+                <div class="py-[20px] hover:bg-gray-500 transition-all duration-300 ease-in-out flex items-center justify-start mx-[2rem]">
+                    <font-awesome-icon icon="message" class="px-[10px]"/>
+                    <div>
+                        Messages
+                    </div>
+                </div>
+                <div class="py-[20px] hover:bg-gray-500 transition-all duration-300 ease-in-out flex items-center justify-start mx-[2rem]">
+                    <font-awesome-icon icon="cloud-arrow-down" class="px-[10px]"/>
+                    <div>
+                        Download
+                    </div>
+                </div>
+                <div class="py-[20px] hover:bg-gray-500 transition-all duration-300 ease-in-out flex items-center justify-start mx-[2rem]">
+                    <font-awesome-icon icon="sliders" class="px-[10px]"/>
+                    <div>
+                        Settings
+                    </div>
+                </div>
             </div>
         </div>
         <div class="w-full h-full bg-gray-400">
