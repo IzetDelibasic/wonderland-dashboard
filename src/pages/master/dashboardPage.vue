@@ -4,7 +4,7 @@
       <div class="w-[400px] h-full bg-gray-200 text-center text-white" v-show="showSide">
         <div class="h-[50px] bg-gray-900 flex justify-start items-center">
           <div class="px-[20px]">
-            <h3 class="font-bold text-[1.5rem]">Disney Dashboard</h3>
+            <h3 class="font-bold text-[1.5rem]">Wonderland Dashboard</h3>
           </div>
         </div>
         <div class="h-[calc(100vh-50px)] bg-gray-800">
@@ -22,7 +22,11 @@
             <input type="text" class="p-2 pl-8 rounded border border-gray-200 bg-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent" placeholder="What you thinking now?" value="" />
           </div>
         </div>
-        <div class="h-[calc(100vh-50px)] bg-white">
+        <div class="h-[calc(100vh-50px)] flex justify-center items-center" :style="{ backgroundImage: 'url(' + require('@/images/dashboardBackground.webp') + ')', backgroundSize: 'cover' }">
+            <div class="text-center font-medium text-3xl">
+            <h1 class="pb-[1rem]">Welcome to Disney World!</h1>
+            <button type="button" class="bg-gray-800 hover:bg-gray-950 text-white font-bold py-2 px-4 rounded">{{ buttonText }}</button>
+            </div>
         </div>
       </div>
     </div>
@@ -30,10 +34,12 @@
   
   <script>
   import { sidebarConstant } from '../constants/sidebarConstants'; 
+
   
   export default {
     data() {
       return {
+        buttonText: "Dive into Disney World",
         showSide: true,
         sidebarConstant: sidebarConstant,
       };

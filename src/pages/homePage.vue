@@ -3,7 +3,7 @@
     <div class="w-full h-full bg-gray-200 text-center text-white" >
       <div class="h-[50px] bg-gray-900">
         <div class="h-full px-[20px] flex items-center justify-between">
-          <h3 class="font-bold text-[1.5rem]">Disney Dashboard</h3>
+          <h3 class="font-bold text-[1.5rem]">Wonderland Dashboard</h3>
           <font-awesome-icon icon="fa-solid fa-house-user" class="cursor-pointer"/>
         </div>
       </div>
