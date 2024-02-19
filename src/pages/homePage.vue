@@ -4,7 +4,7 @@
       <div class="h-[50px] bg-gray-900">
         <div class="h-full px-[20px] flex items-center justify-between">
           <h3 class="font-bold text-[1.5rem]">Wonderland Dashboard</h3>
-          <font-awesome-icon icon="fa-solid fa-house-user" class="cursor-pointer"/>
+          <font-awesome-icon icon="fa-solid fa-house-user" class="cursor-pointer" @click="goToStartPage"/>
         </div>
       </div>
     </div>
@@ -38,7 +38,12 @@ export default {
       console.error(error);
       this.loading = false;
     }
-  }
+  },
+  methods: {
+    goToStartPage() {
+      this.$router.push('/');
+    }
+  },
 };
 </script>
 
