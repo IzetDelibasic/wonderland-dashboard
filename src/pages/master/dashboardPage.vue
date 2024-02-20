@@ -23,9 +23,12 @@
         </div>
       </div>
       <div class="h-[calc(100vh-50px)] flex justify-center items-center" :style="{ backgroundImage: 'url(' + require('@/images/dashboardBackground.webp') + ')', backgroundSize: 'cover' }">
-        <div class="text-center font-medium text-3xl">
-          <h1 class="pb-[1rem]">Welcome to Disney World!</h1>
-          <button type="button" class="bg-gray-800 hover:bg-gray-950 text-white font-bold py-2 px-4 rounded" @click="goToHome">{{ buttonText }}</button>
+        <div class="text-center font-medium text-3xl bg-bluePurple bg-opacity-50 py-10 px-[10rem] rounded-[25px]">
+          <div class="flex flex-col justify-center items-center">
+            <img class="w-[15rem] h-[20rem]" :style="{ backgroundImage: 'url(' + require('@/images/disneyGoofy.webp') + ')' , backgroundSize: 'cover'} ">
+            <h1 class="pb-[1rem] font-workSans font-medium">Welcome to Disney World!</h1>
+          </div>
+          <button type="button" class="bg-gray-800 hover:bg-gray-950 text-white font-medium py-2 px-4 rounded font-workSans" @click="goToHome">{{ buttonText }}</button>
         </div>
       </div>
     </div>
