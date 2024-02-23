@@ -52,7 +52,19 @@ export default {
     },
     goToHome() {
       this.$router.push('/home');
-    }
+    },
+    goToProfile(){
+      this.$router.push('/profiles');
+    },
+    goToMessages(){
+      this.$router.push('/messages');
+    },
+    goToDownload(){
+      this.$router.push('/download');
+    },
+    goToSettings(){
+      this.$router.push('/settings');
+    },
   },
 };
 </script>

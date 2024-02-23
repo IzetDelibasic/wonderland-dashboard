@@ -18,6 +18,21 @@ const routes = [
     name: 'Profiles Page',
     path: '/profiles',
     component: ProfilesPage,
+  },
+  {
+    name: 'Messages',
+    path: '/messages',
+    // component: Messages,
+  },
+  {
+    name: 'Download Page',
+    path: '/download',
+    // component: Download,
+  },
+  {
+    name: 'Settings Page',
+    path: '/settings',
+    // component: Settings,
   }
 ]
 
