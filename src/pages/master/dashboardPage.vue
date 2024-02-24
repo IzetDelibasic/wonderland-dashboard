@@ -23,12 +23,12 @@
         </div>
       </div>
       <div class="h-[calc(100vh-50px)] flex justify-center items-center" :style="{ backgroundImage: 'url(' + require('@/images/dashboardBackground.webp') + ')', backgroundSize: 'cover' }">
-        <div class="text-center font-medium text-3xl bg-bluePurple bg-opacity-50 py-10 px-[10rem] rounded-[25px]">
+        <div class="flex flex-col justify-center text-center font-medium text-3xl bg-white hover:bg-bluePurple bg-opacity-80 hover:bg-opacity-30 py-10 px-[10rem] rounded-[25px] ease-in-out duration-300">
           <div class="flex flex-col justify-center items-center">
-            <img class="w-[15rem] h-[20rem]" :style="{ backgroundImage: 'url(' + require('@/images/disneyGoofy.webp') + ')' , backgroundSize: 'cover'} ">
-            <h1 class="pb-[1rem] font-workSans font-medium">Welcome to Disney World!</h1>
+            <div class="w-[12rem] h-[15rem] border-none mb-[1rem]" :style="{ backgroundImage: 'url(' + require('@/images/disneyGoofy.webp') + ')' , backgroundSize: 'cover', backgroundPosition: 'center' } "></div>
+            <div class="pb-[1rem] font-workSans font-medium">Welcome to Disney World!</div>
           </div>
-          <button type="button" class="bg-gray-800 hover:bg-gray-950 text-white font-medium py-2 px-4 rounded font-workSans" @click="goToHome">{{ buttonText }}</button>
+          <CustomButton @click="goToHome" :title="buttonText" className="bg-black hover:bg-bluePurple text-white font-medium rounded font-workSans ease-out duration-300" />
         </div>
       </div>
     </div>
@@ -37,35 +37,37 @@
 
 <script>
 import { sidebarConstant } from '../constants/sidebarConstants'; 
+import CustomButton from '@/pages/CustomButton.vue'
 
 export default {
-  data() {
-    return {
-      buttonText: "Dive into Disney World",
-      showSide: true,
-      sidebarConstant: sidebarConstant,
-    };
-  },
-  methods: {
-    toggleSideBar() {
-      this.showSide = !this.showSide;
+    data() {
+        return {
+            buttonText: "Dive into Disney World",
+            showSide: true,
+            sidebarConstant: sidebarConstant,
+        };
     },
-    goToHome() {
-      this.$router.push('/home');
+    methods: {
+        toggleSideBar() {
+            this.showSide = !this.showSide;
+        },
+        goToHome() {
+            this.$router.push('/home');
+        },
+        goToProfile() {
+            this.$router.push('/profiles');
+        },
+        goToMessages() {
+            this.$router.push('/messages');
+        },
+        goToDownload() {
+            this.$router.push('/download');
+        },
+        goToSettings() {
+            this.$router.push('/settings');
+        },
     },
-    goToProfile(){
-      this.$router.push('/profiles');
-    },
-    goToMessages(){
-      this.$router.push('/messages');
-    },
-    goToDownload(){
-      this.$router.push('/download');
-    },
-    goToSettings(){
-      this.$router.push('/settings');
-    },
-  },
+    components: { CustomButton }
 };
 </script>
 
