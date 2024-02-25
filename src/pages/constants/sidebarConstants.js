@@ -4,7 +4,7 @@ export const sidebarConstant = [
         items: [
           {
             name: 'Home',
-            href: '/',
+            href: '/home',
             icon: 'fa-solid fa-house-user',
           },
         ],
@@ -30,21 +30,21 @@ export const sidebarConstant = [
         ],
       },
       {
-        title: 'Download',
+        title: 'Films & Series',
         items: [
           {
-            name: 'Download',
-            href: '/download',
-            icon: 'cloud-arrow-down',
+            name: 'Films & Series',
+            href: '/films-series',
+            icon: 'camera',
           },
         ],
       },{
-        title: 'Settings',
+        title: 'Disney Moments',
         items: [
           {
-            name: 'Settings',
-            href: '/settings',
-            icon: 'sliders',
+            name: 'Disney Moments',
+            href: '/disney-moments',
+            icon: 'star',
           },
         ],
       },

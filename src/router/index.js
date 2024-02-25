@@ -1,8 +1,12 @@
+// -Router-
 import { createRouter, createWebHistory } from "vue-router";
-import HomePage from '../pages/HomePage';
-import DashboardPage from '../pages/master/dashboardPage';
-import HistoryPage from '../pages/HistoryPage';
-import QuizPage from '@/pages/QuizPage'
+// -Pages-
+import HomePage from '@/pages/HomePage';
+import DashboardPage from '@/pages/master/DashboardPage';
+import HistoryPage from '@/pages/HistoryPage';
+import QuizPage from '@/pages/QuizPage';
+import FilmsSeries from '@/pages/FilmsSeries';
+import DisneyMoments from '@/pages/DisneyMoments';
 
 const routes = [
   {
@@ -26,14 +30,14 @@ const routes = [
     component: QuizPage,
   },
   {
-    name: 'Download Page',
-    path: '/download',
-    // component: Download,
+    name: 'Films & Series',
+    path: '/films-series',
+    component: FilmsSeries,
   },
   {
-    name: 'Settings Page',
-    path: '/settings',
-    // component: Settings,
+    name: 'Disney Moments',
+    path: '/disney-moments',
+    component: DisneyMoments,
   }
 ]
 

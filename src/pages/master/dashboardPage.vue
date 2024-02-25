@@ -9,7 +9,7 @@
       </div>
       <div class="h-[calc(100vh-50px)] bg-gray-800">
         <!-- Dynamically generate sidebar items -->
-        <div v-for="category in sidebarConstant" :key="category.title" class="py-[20px] hover:bg-gray-500 transition-all duration-300 ease-in-out flex items-center justify-start mx-[2rem]">
+        <div v-for="category in sidebarConstant" :key="category.title" class="py-[20px] hover:bg-gray-500 transition-all duration-300 ease-in-out flex items-center justify-start mx-[2rem]" @click="navigateTo(category.items[0].href)">
           <font-awesome-icon :icon="category.items[0].icon" class="px-[10px]"/>
           <div>{{ category.title }}</div>
         </div>
@@ -37,7 +37,7 @@
 
 <script>
 import { sidebarConstant } from '../constants/sidebarConstants'; 
-import CustomButton from '@/pages/CustomButton.vue'
+import CustomButton from '@/components/CustomButton.vue'
 
 export default {
     data() {
@@ -51,21 +51,13 @@ export default {
         toggleSideBar() {
             this.showSide = !this.showSide;
         },
-        goToHome() {
-            this.$router.push('/home');
+        navigateTo(href) {
+            this.$router.push(href);
         },
-        goToProfile() {
-            this.$router.push('/profiles');
-        },
-        goToMessages() {
-            this.$router.push('/messages');
-        },
-        goToDownload() {
-            this.$router.push('/download');
-        },
-        goToSettings() {
-            this.$router.push('/settings');
-        },
+        goToHome(){
+          this.$router.push('/home');
+        }
+
     },
     components: { CustomButton }
 };
