@@ -10,21 +10,21 @@ export const sidebarConstant = [
         ],
       },
       {
-        title: 'Profile',
+        title: 'Character History',
         items: [
           {
-            name: 'Profile',
-            href: '/profile',
+            name: 'Character History',
+            href: '/history',
             icon: 'users',
           },
         ],
       },
       {
-        title: 'Messages',
+        title: 'Quiz Game',
         items: [
           {
-            name: 'Messages',
-            href: '/messages',
+            name: 'Quiz Game',
+            href: '/quiz',
             icon: 'message',
           },
         ],

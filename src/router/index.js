@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomePage from '../pages/homePage';
+import HomePage from '../pages/HomePage';
 import DashboardPage from '../pages/master/dashboardPage';
-import ProfilesPage from '../pages/profilesPage';
+import HistoryPage from '../pages/HistoryPage';
+import QuizPage from '@/pages/QuizPage'
 
 const routes = [
   {
@@ -15,14 +16,14 @@ const routes = [
     component: HomePage,
   },
   {
-    name: 'Profiles Page',
-    path: '/profiles',
-    component: ProfilesPage,
+    name: 'History Page',
+    path: '/history',
+    component: HistoryPage,
   },
   {
-    name: 'Messages',
-    path: '/messages',
-    // component: Messages,
+    name: 'Quiz Page',
+    path: '/quiz',
+    component: QuizPage,
   },
   {
     name: 'Download Page',

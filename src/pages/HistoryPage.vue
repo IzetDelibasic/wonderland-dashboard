@@ -1,6 +1,6 @@
 <template lang="">
     <div>
-        Profiles
+        History Page
     </div>
 </template>
 <script>
