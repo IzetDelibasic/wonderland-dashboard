@@ -4,7 +4,8 @@ module.exports = {
    theme: {
      extend: {
       fontFamily: {
-        workSans: 'Work Sans'
+        workSans: 'Work Sans',
+        montserrat: 'Montserrat'
       },
       colors:{
         bluePurple: "#9272CF",
