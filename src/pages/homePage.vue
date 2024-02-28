@@ -12,7 +12,7 @@
     <div v-if="loading">Loading data.</div>
     <div v-else class="lg:grid lg:grid-cols-5 flex flex-col lg:mx-[0rem] lg:w-full sm:w-[70%] mx-auto">
       <div v-for="character in characters" :key="character._id" class="flex flex-col items-center my-[1rem] group  lg:w-full lg:h-full">
-        <div class="flex flex-col items-center bg-gray-50 bg-opacity-65  p-[1rem] lg:rounded-[10px] rounded-br-none lg:rounded-tl-none lg:hover:rounded-tl-[10px] lg:hover:rounded-br-[10px] duration-300 ease-in-out lg:hover:opacity-90">
+        <div class="flex flex-col items-center bg-gray-50 bg-opacity-65 p-[1rem] lg:rounded-[10px] rounded-br-none lg:rounded-tl-none lg:hover:rounded-tl-[10px] lg:hover:rounded-br-[10px] duration-300 ease-in-out lg:hover:opacity-90">
           <img :src="character.imageUrl" :alt="character.name" style="" class="w-[15rem] h-[12rem] rounded-[10px] lg:rounded-br-none lg:rounded-tl-none lg:hover:rounded-tl-[10px] lg:hover:rounded-br-[10px] duration-300 ease-in-out lg:hover:opacity-90">
           <h2 class="text-[1.1rem] text-center font-medium font-montserrat">{{ character.name }}</h2>
         </div>
