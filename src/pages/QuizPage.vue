@@ -16,17 +16,16 @@
         <div v-for="(question, index) in questionsAnswers" :key="index" class="mb-[1.5rem]">
           <p class="font-medium mb-[0.5rem] font-montserrat">{{ 'Q' + (index + 1) + ': ' + question.question }}</p>
           <div class="flex justify-center items-center">
-            <input type="radio" id="answer1" name="question1" class="mr-[0.5rem]">
-            <label for="answer1">{{ question.trueAnswer }}</label>
+            <input type="radio" :id="'answer1' + index" :name="'question' + index" class="mr-[0.5rem]">
+            <label :for="'answer1' + index">{{ question.trueAnswer }}</label>
           </div>
           <div class="flex justify-center items-center mt-[0.5rem]">
-            <input type="radio" id="answer2" name="question1" class="mr-[0.5rem]">
-            <label for="answer2">{{ question.wrongAnswer }}</label>
+            <input type="radio" :id="'answer2' + index" :name="'question' + index" class="mr-[0.5rem]">
+            <label :for="'answer2' + index">{{ question.wrongAnswer }}</label>
           </div>
         </div>
-
         <!-- Button for submission -->
-        <button class="bg-bluePurple hover:bg-black text-white py-[0.5rem] px-[1rem] rounded-md">Submit Answers</button>
+        <CustomButton :title="submitTitle" class="bg-gray-900 hover:bg-bluePurple text-white font-medium rounded font-montserrat ease-out duration-300 lg:w-[45%] mb-[1rem] lg:mb-0 mx-auto"/>
       </div>
     </div>
   </div>
@@ -34,17 +33,22 @@
 
 <script>
 import { questionsAnswersConstant } from "@/pages/constants/questionsAnswersConstant";
+import CustomButton from '@/components/CustomButton.vue'
 
 export default {
+  components: {
+    CustomButton
+  },
   data() {
     return {
-      questionsAnswers: questionsAnswersConstant
+      questionsAnswers: questionsAnswersConstant,
+      submitTitle: "Submit Answer"
     };
   },  
   methods: {
     goToStartPage() {
       this.$router.push('/');
-    }
+    },
   },
 };
 </script>
