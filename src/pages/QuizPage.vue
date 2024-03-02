@@ -9,21 +9,22 @@
       </div>
 
       <!-- Quiz Section -->
-      <div class="max-w-md mx-auto mt-[2rem] bg-white shadow-md rounded-md p-[1.5rem] text-black">
-        <h2 class="text-lg font-semibold mb-4">Quiz Game: Do you know Wonderland?</h2>
+      <div class="lg:w-[50%] w-[80%] mx-auto mt-[5rem] bg-white rounded-[1rem] lg:p-[3rem] p-[2rem] text-black lg:hover:bg-opacity-90 ease-in-out duration-300">
+        <h2 class="text-[1.5rem] font-semibold mb-[1rem] font-montserrat">Quiz Game: Do you know Wonderland?</h2>
 
-        <!-- Question 1 -->
-        <div class="mb-[1.5rem]">
-          <p class="font-medium mb-[0.5rem]">Q1: Who is the author of the book "Alice's Adventures in Wonderland"?</p>
-          <div class="flex items-center">
+        <!-- Questions and Answers -->
+        <div v-for="(question, index) in questionsAnswers" :key="index" class="mb-[1.5rem]">
+          <p class="font-medium mb-[0.5rem] font-montserrat">{{ 'Q' + (index + 1) + ': ' + question.question }}</p>
+          <div class="flex justify-center items-center">
             <input type="radio" id="answer1" name="question1" class="mr-[0.5rem]">
-            <label for="answer1">Lewis Carroll</label>
+            <label for="answer1">{{ question.trueAnswer }}</label>
           </div>
-          <div class="flex items-center mt-[0.5rem]">
+          <div class="flex justify-center items-center mt-[0.5rem]">
             <input type="radio" id="answer2" name="question1" class="mr-[0.5rem]">
-            <label for="answer2">J.K. Rowling</label>
+            <label for="answer2">{{ question.wrongAnswer }}</label>
           </div>
         </div>
+
         <!-- Button for submission -->
         <button class="bg-bluePurple hover:bg-black text-white py-[0.5rem] px-[1rem] rounded-md">Submit Answers</button>
       </div>
@@ -32,10 +33,12 @@
 </template>
 
 <script>
+import { questionsAnswersConstant } from "@/pages/constants/questionsAnswersConstant";
+
 export default {
   data() {
     return {
-      
+      questionsAnswers: questionsAnswersConstant
     };
   },  
   methods: {
