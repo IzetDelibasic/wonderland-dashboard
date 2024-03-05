@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-cover bg-gray-200 text-center " :style="{ backgroundImage: 'url(' + require('@/images/dashboardBackground.webp') + ')' }">
+  <div class="min-h-screen bg-cover bg-gray-200 text-center " :style="{ backgroundImage: 'url(' + require('@/images/filmsWallpaper.webp') + ')' }">
     <div class="w-full bg-gray-900 text-white">
       <div class="h-[50px] px-4 flex items-center justify-between">
         <h3 class="font-bold font-montserrat lg:text-[1.5rem]">Wonderland Dashboard</h3>
@@ -7,18 +7,30 @@
       </div>
     </div>
 
-    <div class="mt-8 mx-auto max-w-md">
+    <div class="mt-8 mx-auto w-[80%] lg:w-[30rem]">
       <input v-model="movieTitle" type="text" class="border border-gray-300 rounded px-[1rem] py-[0.5rem] w-full" placeholder="Enter movie title">
-      <button @click="searchMovie" class="bg-bluePurple hover:bg-blue-400 text-white font-bold py-[0.5rem] px-[1rem] rounded mt-[0.5rem]">Search Movie</button>
+      <button @click="searchMovie" class="bg-bluePurple hover:bg-gray-600 ease-out duration-300 text-white font-bold py-[0.5rem] px-[1rem] rounded mt-[0.5rem]">Search Movie</button>
     </div>
 
     <!-- Display movie information -->
-    <div v-if="movieInfo" class="mt-[2rem] mx-auto w-[30rem] bg-white">
+    <div></div>
+    <div v-if="movieInfo" class="mt-[5rem] mx-auto lg:w-[50%] bg-white bg-opacity-85 font-montserrat p-[3rem] rounded-[1rem] rounded-br-none">
       <h4 class="font-bold text-[1.25rem]">{{ movieInfo.Title }}</h4>
       <p>{{ movieInfo.Plot }}</p>
-      <p><strong>Director:</strong> {{ movieInfo.Director }}</p>
-      <p><strong>Actors:</strong> {{ movieInfo.Actors }}</p>
-      <p><strong>Year:</strong> {{ movieInfo.Year }}</p>
+      <div class="flex mx-auto lg:w-[60%] w-[80%] justify-between">
+        <div class="flex flex-col font-montserrat font-bold text-start">
+          <p>Director:</p>
+          <p>Actors:</p>
+          <p>Year:</p>
+          <p>Rating:</p>
+        </div>
+        <div class="flex flex-col text-start font-montserrat">
+          <p>{{ movieInfo.Director }}</p>
+          <p>{{ movieInfo.Actors }}</p>
+          <p>{{ movieInfo.Year }}</p>
+          <p>{{ movieInfo.imdbRating }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
