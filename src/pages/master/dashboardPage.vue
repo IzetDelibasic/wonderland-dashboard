@@ -4,13 +4,13 @@
     <div class="w-[400px] h-full bg-gray-200 text-center text-white" v-show="showSide">
       <div class="h-[50px] bg-gray-900 flex justify-start items-center">
         <div class="px-[20px]">
-          <h3 class="font-bold text-[1.5rem]">Wonderland Dashboard</h3>
+          <h3 class="font-bold font-montserrat lg:text-[1.2rem] cursor-default">Wonderland Dashboard</h3>
         </div>
       </div>
       <div class="h-[calc(100vh-50px)] bg-gray-800">
         <!-- Dynamically generate sidebar items -->
-        <div v-for="category in sidebarConstant" :key="category.title" class="py-[20px] hover:bg-gray-500 transition-all duration-300 ease-in-out flex items-center justify-start mx-[2rem]" @click="navigateTo(category.items[0].href)">
-          <font-awesome-icon :icon="category.items[0].icon" class="px-[10px]"/>
+        <div v-for="category in sidebarConstant" :key="category.title" class="py-[20px] hover:bg-gray-500 transition-all duration-300 ease-in-out flex items-center justify-start cursor-pointer" @click="navigateTo(category.items[0].href)">
+          <font-awesome-icon :icon="category.items[0].icon" class="px-[10px] ml-[1rem]"/>
           <div>{{ category.title }}</div>
         </div>
       </div>
