@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <div
     :style="{
       backgroundImage:
@@ -20,12 +20,32 @@
           />
         </div>
       </div>
+
+      <!-- Quotes -->
+      <div class="mt-8 px-4">
+        <h4 class="text-2xl font-bold mb-4">Disney Quotes</h4>
+        <div v-for="(quote, index) in disneyQuotes" :key="index" class="mb-6">
+          <p class="text-lg font-semibold">{{ quote.quote }}</p>
+          <p class="text-gray-400">{{ quote.author }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { disneyQuotes } from "@/pages/constants/quotesConstant";
+
+export default {
+  data() {
+    return {
+      disneyQuotes: disneyQuotes,
+    };
+  },
+  methods: {
+    goToStartPage() {},
+  },
+};
 </script>
 
-<style lang=""></style>
+<style></style>
