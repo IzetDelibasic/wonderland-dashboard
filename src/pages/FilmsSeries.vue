@@ -33,7 +33,6 @@
     </div>
 
     <!-- Display movie information -->
-    <div></div>
     <div
       v-if="movieInfo"
       class="mt-[5rem] mx-auto lg:w-[60%] w-[80%] bg-white bg-opacity-85 font-montserrat p-[3rem] rounded-[1rem] rounded-br-none"

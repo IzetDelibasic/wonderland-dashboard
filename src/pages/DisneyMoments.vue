@@ -22,28 +22,54 @@
       </div>
 
       <!-- Quotes -->
-      <div class="mt-8 px-4">
+      <div
+        class="mt-8 px-4 flex flex-col justify-center items-center lg:pt-[10rem] font-montserrat"
+      >
         <h4 class="text-2xl font-bold mb-4">Disney Quotes</h4>
-        <div v-for="(quote, index) in disneyQuotes" :key="index" class="mb-6">
-          <p class="text-lg font-semibold">{{ quote.quote }}</p>
-          <p class="text-gray-400">{{ quote.author }}</p>
+        <div
+          class="bg-gray-100 bg-opacity-90 w-[70%] lg:w-[55%] h-[10rem] flex flex-col justify-center items-center rounded-[10px]"
+        >
+          <p class="text-lg font-semibold text-black">
+            {{ randomQuote.quote }}
+          </p>
+          <p class="text-black">{{ randomQuote.author }}</p>
         </div>
+        <CustomButton
+          :title="searchQuote"
+          @click="getRandomQuote"
+          class="bg-bluePurple hover:bg-gray-900 text-white font-medium rounded font-montserrat ease-out duration-300 lg:w-[15%] p-10 mt-10 lg:mb-0 mx-auto"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import CustomButton from "@/components/CustomButton.vue";
 import { disneyQuotes } from "@/pages/constants/quotesConstant";
 
 export default {
   data() {
     return {
       disneyQuotes: disneyQuotes,
+      randomQuote: {},
+      searchQuote: "Search Quote",
     };
   },
+  mounted() {
+    this.getRandomQuote();
+  },
+  components: {
+    CustomButton,
+  },
   methods: {
-    goToStartPage() {},
+    goToStartPage() {
+      this.$router.push("/");
+    },
+    getRandomQuote() {
+      const randomIndex = Math.floor(Math.random() * this.disneyQuotes.length);
+      this.randomQuote = this.disneyQuotes[randomIndex];
+    },
   },
 };
 </script>
