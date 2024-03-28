@@ -5,7 +5,7 @@
         'url(' + require('@/images/dashboardBackground.webp') + ')',
       backgroundSize: 'cover',
     }"
-    class="min-h-screen"
+    class="min-h-screen pb-[5rem]"
   >
     <div class="w-full h-full text-center text-white">
       <div class="h-[3rem] bg-gray-900">

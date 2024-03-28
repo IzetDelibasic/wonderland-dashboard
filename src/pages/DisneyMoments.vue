@@ -23,11 +23,11 @@
 
       <!-- Quotes -->
       <div
-        class="mt-8 px-4 flex flex-col justify-center items-center lg:pt-[10rem] font-montserrat"
+        class="mt-8 px-4 flex flex-col justify-center items-center md:pt-[10rem] pt-[6rem] font-montserrat cursor-default"
       >
         <h4 class="text-2xl font-bold mb-4">Disney Quotes</h4>
         <div
-          class="bg-gray-100 bg-opacity-90 w-[70%] lg:w-[55%] h-[10rem] flex flex-col justify-center items-center rounded-[10px]"
+          class="bg-gray-100 bg-opacity-90 shadow-xl w-[80%] lg:w-[60%] md:h-[10rem] h-[15rem] p-4 flex flex-col justify-center items-center rounded-[10px] lg:rounded-br-none"
         >
           <p class="text-lg font-semibold text-black">
             {{ randomQuote.quote }}
@@ -37,7 +37,7 @@
         <CustomButton
           :title="searchQuote"
           @click="getRandomQuote"
-          class="bg-bluePurple hover:bg-gray-900 text-white font-medium rounded font-montserrat ease-out duration-300 lg:w-[15%] p-10 mt-10 lg:mb-0 mx-auto"
+          class="bg-gray-900 hover:bg-bluePurple text-white font-medium rounded font-montserrat ease-out duration-300 lg:w-[15%] mt-8 mx-auto"
         />
       </div>
     </div>
