@@ -55,7 +55,7 @@
         }"
       >
         <div
-          class="flex flex-col justify-center text-center font-medium text-3xl bg-white hover:bg-bluePurple bg-opacity-80 hover:bg-opacity-30 py-10 px-[10rem] rounded-[25px] ease-in-out duration-300"
+          class="flex flex-col justify-center text-center font-medium text-3xl bg-white hover:bg-bluePurple bg-opacity-80 hover:bg-opacity-30 p-4 lg:py-10 lg:px-[10rem] ml-4 mr-4 lg:m-0 rounded-[25px] ease-in-out duration-300"
         >
           <div class="flex flex-col justify-center items-center">
             <div
@@ -67,14 +67,14 @@
                 backgroundPosition: 'center',
               }"
             ></div>
-            <div class="pb-[1rem] font-workSans font-medium">
+            <div class="pb-[1rem] font-montserrat font-medium">
               Welcome to Disney World!
             </div>
           </div>
           <CustomButton
             @click="goToHome"
             :title="buttonText"
-            className="bg-black hover:bg-bluePurple text-white font-medium rounded font-workSans ease-out duration-300"
+            className="bg-black hover:bg-bluePurple text-white font-medium rounded ease-out duration-300 w-[70%] text-[1rem] font-montserrat mx-auto"
           />
         </div>
       </div>
