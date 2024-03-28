@@ -44,7 +44,10 @@
               :id="'answer1' + index"
               :name="'question' + index"
               class="mr-[0.5rem]"
-              @click="checkAnswer(index, question.trueAnswer)"
+              @click="
+                checkAnswer(index, question.trueAnswer);
+                addUserAnswer(question.trueAnswer);
+              "
             />
             <label :for="'answer1' + index">{{ question.trueAnswer }}</label>
           </div>
@@ -54,7 +57,10 @@
               :id="'answer2' + index"
               :name="'question' + index"
               class="mr-[0.5rem]"
-              @click="checkAnswer(index, question.wrongAnswer)"
+              @click="
+                checkAnswer(index, question.wrongAnswer);
+                addUserAnswer(question.wrongAnswer);
+              "
             />
             <label :for="'answer2' + index">{{ question.wrongAnswer }}</label>
           </div>
@@ -64,6 +70,7 @@
           :title="submitTitle"
           class="bg-gray-900 hover:bg-bluePurple text-white font-medium rounded font-montserrat ease-out duration-300 lg:w-[45%] mb-[1rem] lg:mb-0 mx-auto"
           @click="showResult = true"
+          :disabled="!areAllAnswersChecked()"
         />
         <!-- Display quiz result -->
         <p v-if="showResult" class="font-medium my-[0.5rem] font-montserrat">
@@ -92,6 +99,14 @@ export default {
     };
   },
   methods: {
+    addUserAnswer(answer) {
+      if (!this.userAnswers.includes(answer)) {
+        this.userAnswers.push(answer);
+      }
+    },
+    areAllAnswersChecked() {
+      return this.userAnswers.length === this.questionsAnswers.length;
+    },
     goToStartPage() {
       this.$router.push("/");
     },
