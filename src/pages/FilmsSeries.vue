@@ -28,7 +28,7 @@
       <CustomButton
         :title="searchTitle"
         @click="searchMovie"
-        class="bg-bluePurple hover:bg-gray-900 text-white font-medium rounded font-montserrat ease-out duration-300 lg:w-[45%] mb-[1rem] lg:mb-0 mx-auto"
+        class="bg-bg-gray-900 hover:bg-bluePurple border-[1px] border-gray-700 hover:border-bluePurple text-white font-medium rounded font-montserrat ease-out duration-300 lg:w-[45%] mb-[1rem] lg:mb-0 mx-auto"
       />
     </div>
 
