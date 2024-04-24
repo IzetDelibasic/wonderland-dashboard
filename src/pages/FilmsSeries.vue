@@ -28,12 +28,11 @@
       <CustomButton
         :title="searchTitle"
         @click="searchMovie"
-        class="bg-bluePurple hover:bg-gray-900 text-white font-medium rounded font-montserrat ease-out duration-300 lg:w-[45%] mb-[1rem] lg:mb-0 mx-auto"
+        class="bg-bg-gray-900 hover:bg-bluePurple border-[1px] border-gray-700 hover:border-bluePurple text-white font-medium rounded font-montserrat ease-out duration-300 lg:w-[45%] mb-[1rem] lg:mb-0 mx-auto"
       />
     </div>
 
     <!-- Display movie information -->
-    <div></div>
     <div
       v-if="movieInfo"
       class="mt-[5rem] mx-auto lg:w-[60%] w-[80%] bg-white bg-opacity-85 font-montserrat p-[3rem] rounded-[1rem] rounded-br-none"

@@ -22,6 +22,7 @@
       </div>
 
       <!-- Quotes -->
+      <<<<<<< HEAD
       <div class="mt-[10rem] px-4">
         <h4 class="text-2xl font-bold mb-4 font-workSans">Disney Quotes</h4>
         <div
@@ -40,12 +41,18 @@
             class="bg-bluePurple hover:bg-gray-900 text-white font-medium rounded font-montserrat ease-out duration-300 md:w-[20%] w-[50%] mb-[1rem] lg:mb-0 mx-auto"
           />
         </div>
+        <CustomButton
+          :title="searchQuote"
+          @click="getRandomQuote"
+          class="bg-gray-900 hover:bg-bluePurple text-white font-medium rounded font-montserrat ease-out duration-300 lg:w-[15%] mt-8 mx-auto"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import CustomButton from "@/components/CustomButton.vue";
 import { disneyQuotes } from "@/pages/constants/quotesConstant";
 import CustomButton from "@/components/CustomButton.vue";
 
@@ -57,6 +64,7 @@ export default {
       getQuote: "Get Quote",
     };
   },
+
   components: {
     CustomButton,
   },
