@@ -22,47 +22,45 @@
       </div>
     </div>
     <div
-      class="w-[80%] flex flex-col justify-center items-center mx-auto mt-[3rem] bg-white bg-opacity-80 rounded-[30px] rounded-bl-none rounded-tr-none hover:bg-opacity-65 hover:rounded-[30px] ease-in-out duration-300 p-[5rem]"
+      class="w-[80%] flex flex-col justify-center items-center mx-auto mt-[3rem] bg-white bg-opacity-80 rounded-[30px] rounded-bl-none rounded-tr-none md:hover:bg-opacity-65 md:hover:rounded-[30px] ease-in-out duration-300 lg:p-[5rem] p-10"
     >
-      <div class="xl:h-[25rem]">
-        <div v-if="currentCharacter" class="">
-          <div
-            v-for="item in currentCharacter.items"
-            :key="item.name"
-            class="flex flex-col justify-center items-center text-center"
+      <div v-if="currentCharacter" class="">
+        <div
+          v-for="item in currentCharacter.items"
+          :key="item.name"
+          class="flex flex-col justify-center items-center text-center"
+        >
+          <h3 class="text-[26px] pb-[1rem] font-montserrat font-medium">
+            {{ item.name }}
+          </h3>
+          <img
+            :src="requireImage(item.image)"
+            :alt="item.name"
+            class="w-[15rem] h-[15rem] rounded-[25px]"
+          />
+          <p
+            class="lg:w-[50%] h-full py-[0.5rem] font-montserrat lg:text-[16px] text-[14px] font-medium"
           >
-            <h3 class="text-[26px] pb-[1rem] font-montserrat font-medium">
-              {{ item.name }}
-            </h3>
-            <img
-              :src="requireImage(item.image)"
-              :alt="item.name"
-              class="w-[15rem] h-[15rem] rounded-[25px]"
-            />
-            <p
-              class="lg:w-[50%] h-full py-[0.5rem] font-montserrat lg:text-[18px] font-medium"
-            >
-              {{ item.history }}
-            </p>
-          </div>
+            {{ item.history }}
+          </p>
         </div>
-        <div v-else>
-          <p>No character to display</p>
+        <div
+          class="flex lg:flex-row flex-col justify-between md:w-[50%] w-full mx-auto"
+        >
+          <CustomButton
+            @click="previousCharacter"
+            :title="buttonOneText"
+            class="bg-gray-900 hover:bg-bluePurple text-white font-medium rounded font-workSans ease-out duration-300 lg:w-[45%] mb-[1rem] lg:mb-0"
+          />
+          <CustomButton
+            @click="nextCharacter"
+            :title="buttonTwoText"
+            class="bg-gray-900 hover:bg-bluePurple text-white font-medium rounded font-workSans ease-out duration-300 lg:w-[45%]"
+          />
         </div>
       </div>
-      <div
-        class="flex lg:flex-row flex-col justify-between lg:w-[50%] w-full xl:pt-[7.5rem]"
-      >
-        <CustomButton
-          @click="previousCharacter"
-          :title="buttonOneText"
-          class="bg-gray-900 hover:bg-bluePurple text-white font-medium rounded font-workSans ease-out duration-300 lg:w-[45%] mb-[1rem] lg:mb-0"
-        />
-        <CustomButton
-          @click="nextCharacter"
-          :title="buttonTwoText"
-          class="bg-gray-900 hover:bg-bluePurple text-white font-medium rounded font-workSans ease-out duration-300 lg:w-[45%]"
-        />
+      <div v-else>
+        <p>No character to display</p>
       </div>
     </div>
   </div>

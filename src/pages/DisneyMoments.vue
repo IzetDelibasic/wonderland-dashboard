@@ -22,11 +22,23 @@
       </div>
 
       <!-- Quotes -->
-      <div class="mt-8 px-4">
-        <h4 class="text-2xl font-bold mb-4">Disney Quotes</h4>
-        <div v-for="(quote, index) in disneyQuotes" :key="index" class="mb-6">
-          <p class="text-lg font-semibold">{{ quote.quote }}</p>
-          <p class="text-gray-400">{{ quote.author }}</p>
+      <div class="mt-[10rem] px-4">
+        <h4 class="text-2xl font-bold mb-4 font-workSans">Disney Quotes</h4>
+        <div
+          class="bg-white bg-opacity-90 hover:bg-opacity-75 ease-in-out duration-300 w-[80%] lg:w-[60%] mx-auto rounded-xl shadow-2xl p-4 font-montserrat"
+        >
+          <div class="mb-6">
+            <p class="text-lg font-semibold text-black">
+              {{ currentQuote.quote }}
+            </p>
+            <p class="text-black">{{ currentQuote.author }}</p>
+          </div>
+
+          <CustomButton
+            :title="getQuote"
+            @click="getRandomQuote"
+            class="bg-bluePurple hover:bg-gray-900 text-white font-medium rounded font-montserrat ease-out duration-300 md:w-[20%] w-[50%] mb-[1rem] lg:mb-0 mx-auto"
+          />
         </div>
       </div>
     </div>
@@ -35,15 +47,27 @@
 
 <script>
 import { disneyQuotes } from "@/pages/constants/quotesConstant";
+import CustomButton from "@/components/CustomButton.vue";
 
 export default {
   data() {
     return {
-      disneyQuotes: disneyQuotes,
+      currentQuote:
+        disneyQuotes[Math.floor(Math.random() * disneyQuotes.length)],
+      getQuote: "Get Quote",
     };
   },
+  components: {
+    CustomButton,
+  },
   methods: {
-    goToStartPage() {},
+    goToStartPage() {
+      this.$router.push("/");
+    },
+    getRandomQuote() {
+      this.currentQuote =
+        disneyQuotes[Math.floor(Math.random() * disneyQuotes.length)];
+    },
   },
 };
 </script>

@@ -2,7 +2,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 // -Pages-
 import HomePage from "@/pages/HomePage";
-import DashboardPage from "@/pages/master/DashboardPage";
+import dashboardPage from "@/pages/master/dashboardPage.vue";
 import HistoryPage from "@/pages/HistoryPage";
 import QuizPage from "@/pages/QuizPage";
 import FilmsSeries from "@/pages/FilmsSeries";
@@ -12,7 +12,7 @@ const routes = [
   {
     name: "Dashboard Page",
     path: "/",
-    component: DashboardPage,
+    component: dashboardPage,
   },
   {
     name: "Home Page",
