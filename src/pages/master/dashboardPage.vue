@@ -12,7 +12,7 @@
           </h3>
         </div>
       </div>
-      <div class="h-[calc(100vh-50px)] bg-gray-800">
+      <div class="h-[calc(100vh-50px)] bg-gray-800 font-montserrat">
         <!-- Dynamically generate sidebar items -->
         <div
           v-for="category in sidebarConstant"
@@ -22,9 +22,9 @@
         >
           <font-awesome-icon
             :icon="category.items[0].icon"
-            class="px-[10px] ml-[1rem]"
+            class="px-2 sm:ml-[1rem] mr-2 ml-2"
           />
-          <div>{{ category.title }}</div>
+          <div class="text-[10.5px] sm:text-[1rem]">{{ category.title }}</div>
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@
           <CustomButton
             @click="goToHome"
             :title="buttonText"
-            className="bg-black hover:bg-bluePurple text-white font-medium rounded ease-out duration-300 w-[70%] text-[1rem] font-montserrat mx-auto"
+            className="bg-black hover:bg-bluePurple text-white font-medium rounded ease-out duration-300 w-[95%] sm:w-[60%] text-[1rem] font-montserrat mx-auto"
           />
         </div>
       </div>
